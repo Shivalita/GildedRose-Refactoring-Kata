@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use GildedRose\GildedRose;
-use GildedRose\Item;
+use App\GildedRose;
+use App\Item;
 
 echo "OMGHAI!" . PHP_EOL;
 
