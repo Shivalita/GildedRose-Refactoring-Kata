@@ -1,9 +1,18 @@
 <?php
 
-namespace App;
+namespace App\Updater;
 
 class ConjuredItemUpdater extends ItemUpdater
 {
+    public static function resolve($item) : bool
+    {
+        if ($item == 'Conjured Mana Cake') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // public function decreaseQuality() : void
     // {
 

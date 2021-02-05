@@ -1,20 +1,25 @@
 <?php
 
-namespace App;
+namespace App\Updater;
 
-class ItemUpdater
+class ItemUpdater extends AbstractUpdater
 {
 
-    protected $item;
+    // protected $item;
 
-    function __construct($item)
-    {
-        $this->item = $item;
-    }
+    // function __construct($item)
+    // {
+    //     $this->item = $item;
+    // }
 
-    public function __toString()
+    // public function __toString()
+    // {
+    //     return "{$this->item}";
+    // }
+
+    public static function resolve($item) : bool
     {
-        return "{$this->item}";
+        return true;
     }
 
     protected function decreaseQuality() : void
@@ -49,6 +54,10 @@ class ItemUpdater
     {
         $this->updateQuality();
         $this->updateSellIn();
+        
+        if ($this->item->name == 'foo') {
+            $this->item->name = 'fixme';
+        }
     }
 
     protected function updateExpired() : void

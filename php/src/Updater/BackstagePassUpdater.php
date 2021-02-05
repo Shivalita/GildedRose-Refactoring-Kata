@@ -1,9 +1,18 @@
 <?php
 
-namespace App;
+namespace App\Updater;
 
 class BackstagePassUpdater extends ItemUpdater
 {
+    public static function resolve($item) : bool
+    {
+        if ($item == 'Backstage passes to a TAFKAL80ETC concert') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function updateQuality() : void
     {
         if ($this->item->sell_in > 0) {
